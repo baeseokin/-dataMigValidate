@@ -1,0 +1,24 @@
+package koreanre.batch.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+import koreanre.batch.dto.BizTb;
+
+@Repository
+public class DataMigValidateSourceDAO {
+	
+	@Autowired
+	@Qualifier("sourceSqlSessionTemplate")
+	private SqlSessionTemplate sqlSession;
+	
+	private final static String NAMESPACE = "koreanre.batch.dao.DataMigValidateSourceDAO.";
+	
+	public List<BizTb> selectBizTb(BizTb bizTb) throws Exception{
+		return sqlSession.selectList(NAMESPACE +"selectBizTb", bizTb);
+	};
+}

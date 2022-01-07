@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="koreanre.batch.dao.DataMigValidateTargetDAO">
+
+	<select id="selectBizTb" parameterType="BizTb" resultType="BizTb">
+		SELECT c1, c2, c3 FROM Biz_Tb
+		where c1 = #{c1}
+	</select>
+	
+	<insert id="insertValidateResult" parameterType="ValidateResult">
+		INSERT INTO val_result(seq, val_date, schema_nm, table_nm, status, src_value, tgt_value)
+		VALUES(nextval('seq_validate'), #{valDate}, #{schemaNm}, #{tableNm}, #{status},#{srcValue},#{tgtValue});
+    </insert>
+	
+</mapper>
