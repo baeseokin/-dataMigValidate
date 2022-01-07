@@ -35,6 +35,12 @@
 		    <artifactId>mariadb-java-client</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>com.ibm.db2</groupId>
+		    <artifactId>jcc</artifactId>
+		    <version>11.5.7.0</version>
+		</dependency>
+	
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
